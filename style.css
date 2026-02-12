@@ -1,10 +1,27 @@
 body {
   margin: 0;
-  font-family: 'Comic Sans MS', cursive;
-  background: linear-gradient(135deg, #FFB7C5, #FF1493);
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #FFB7C5, #FF69B4);
   overflow: hidden;
   text-align: center;
   color: white;
+  position: relative;
+}
+
+/* Floating hearts */
+body::before {
+  content: "💗 💕 💖 💞 💓 💘";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 40px;
+  animation: floatHearts 15s linear infinite;
+  opacity: 0.2;
+}
+
+@keyframes floatHearts {
+  0% { transform: translateY(100%); }
+  100% { transform: translateY(-100%); }
 }
 
 .page {
@@ -21,30 +38,44 @@ body {
 }
 
 .title {
-  font-size: 2rem;
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5rem;
+  text-shadow: 0 0 15px white;
+}
+
+.kitty {
+  width: 150px;
+  margin: 10px 0;
 }
 
 .message {
   max-width: 600px;
   margin: 20px;
+  font-weight: 300;
 }
 
 .music-btn, .next-btn {
   background: white;
   color: #FF1493;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 25px;
   margin: 10px;
-  border-radius: 20px;
+  border-radius: 30px;
   font-size: 1rem;
   cursor: pointer;
+  box-shadow: 0 0 15px pink;
+  transition: 0.3s;
+}
+
+.music-btn:hover, .next-btn:hover {
+  transform: scale(1.1);
 }
 
 .photo {
   max-width: 80%;
   border: 8px solid white;
   border-radius: 25px;
-  box-shadow: 0 0 25px pink;
+  box-shadow: 0 0 30px #ff69b4;
 }
 
 .candle-container {
@@ -55,7 +86,7 @@ body {
 .candle {
   width: 40px;
   height: 150px;
-  background: pink;
+  background: #ff69b4;
   margin: auto;
   border-radius: 10px;
   cursor: pointer;
@@ -82,4 +113,5 @@ body {
   display: none;
   max-width: 600px;
   margin-top: 20px;
+  font-weight: 300;
 }
