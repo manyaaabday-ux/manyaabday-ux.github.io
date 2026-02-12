@@ -1,103 +1,131 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Manya 💗</title>
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #3b0a1a, #120005);
+  font-family: 'Playfair Display', serif;
+  color: white;
+  overflow: hidden;
+  text-align: center;
+}
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
+/* Floating 3D Hearts */
+.floating-hearts {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: url("https://i.ibb.co/7G5Y7Gg/pink-heart.png");
+  background-size: 40px;
+  animation: floatBg 20s linear infinite;
+  opacity: 0.15;
+}
 
-<body>
+@keyframes floatBg {
+  from { background-position: 0 1000px; }
+  to { background-position: 0 -1000px; }
+}
 
-<audio id="bgMusic" loop>
-  <source src="blue.mp3.mp3.mp3" type="audio/mpeg">
-</audio>
+.page {
+  display: none;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px;
+}
 
-<div class="floating-hearts"></div>
+.page.active {
+  display: flex;
+}
 
-<!-- FIRST PAGE -->
-<section class="page active first-page">
-  <div class="content">
+.main-title {
+  font-size: 2.8rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin: 20px 0;
+}
 
-    <img src="https://media.tenor.com/x8v1oNUOmg4AAAAC/cute-cat.gif" class="kitty">
+.intro-text {
+  max-width: 600px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
 
-    <h1 class="main-title">
-      HAPPY BIRTHDAY MANYA 💕
-    </h1>
+.kitty {
+  width: 160px;
+  margin-bottom: 20px;
+}
 
-    <p class="intro-text">
-      Happy Birthday, Manya! I was going to make a joke about how old you’re getting, 
-      but I’m afraid I’d get hit with your walking cane.  
-      Thanks for being the only person who understands my weirdness.  
-      Let’s eat way too much cake and regret it together tomorrow!
-    </p>
+.music-btn, .next-btn {
+  background: linear-gradient(135deg, #ff4da6, #ff99cc);
+  border: none;
+  padding: 12px 30px;
+  margin: 10px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(255, 0, 128, 0.6);
+  transition: 0.3s;
+}
 
-    <button onclick="playMusic()" class="music-btn">PLAY MUSIC</button>
-    <button onclick="nextPage()" class="next-btn">NEXT →</button>
+.music-btn:hover, .next-btn:hover {
+  transform: scale(1.1);
+}
 
-  </div>
-</section>
+.photo-frame {
+  padding: 15px;
+  background: #f8d7e4;
+  border-radius: 25px;
+  box-shadow: 0 10px 40px rgba(255, 105, 180, 0.6);
+}
 
-<!-- PHOTO PAGES -->
+.photo-frame img {
+  max-width: 250px;
+  border-radius: 15px;
+}
 
-<section class="page">
-  <div class="photo-frame">
-    <img src="photo1.jpg.jpeg">
-  </div>
-  <p class="thought">You + Me = My Favorite Memory 💗</p>
-  <button onclick="nextPage()" class="next-btn">NEXT →</button>
-</section>
+.thought {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  font-style: italic;
+}
 
-<section class="page">
-  <div class="photo-frame">
-    <img src="photo2.jpg.jpeg">
-  </div>
-  <p class="thought">Every Moment With You Feels Magical ✨</p>
-  <button onclick="nextPage()" class="next-btn">NEXT →</button>
-</section>
+.candle-container {
+  position: relative;
+  margin-top: 100px;
+}
 
-<section class="page">
-  <div class="photo-frame">
-    <img src="photo3.jpg.jpeg">
-  </div>
-  <p class="thought">You Make Everything Brighter 🌸</p>
-  <button onclick="nextPage()" class="next-btn">NEXT →</button>
-</section>
+.candle {
+  width: 50px;
+  height: 170px;
+  background: pink;
+  margin: auto;
+  border-radius: 10px;
+  cursor: pointer;
+}
 
-<section class="page">
-  <div class="photo-frame">
-    <img src="photo4.jpg.jpeg">
-  </div>
-  <p class="thought">Forever Grateful For You 💞</p>
-  <button onclick="nextPage()" class="next-btn">NEXT →</button>
-</section>
+.flame {
+  width: 20px;
+  height: 35px;
+  background: orange;
+  border-radius: 50%;
+  position: absolute;
+  top: -35px;
+  left: 15px;
+  animation: flicker 0.3s infinite;
+}
 
-<section class="page">
-  <div class="photo-frame">
-    <img src="photo5.jpg.jpeg">
-  </div>
-  <p class="thought">My Favorite Person. Always. 💖</p>
-  <button onclick="nextPage()" class="next-btn">NEXT →</button>
-</section>
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
 
-<!-- FINAL PAGE -->
-
-<section class="page">
-  <div class="candle-container">
-    <div class="flame" id="flame"></div>
-    <div class="candle" onclick="blowCandle()"></div>
-  </div>
-
-  <div id="finalMessage" class="final-message">
-    Happy Birthday to the girl who knows every hidden chapter of my life 
-    and still chooses to stand by me through it all.  
-    You are my soul sister and my forever person.  
-    I love you endlessly. ♾️💌
-  </div>
-</section>
-
-<script src="script.js"></script>
-</body>
-</html>
+.final-message {
+  display: none;
+  max-width: 600px;
+  margin-top: 30px;
+  font-size: 1.1rem;
+}
