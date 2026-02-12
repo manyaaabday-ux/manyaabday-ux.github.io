@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Manya 💖</title>
+<title>Happy Birthday Manya 💗</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,52 +15,75 @@
   <source src="blue.mp3.mp3.mp3" type="audio/mpeg">
 </audio>
 
+<div class="floating-hearts"></div>
+
 <!-- FIRST PAGE -->
-<section class="page active">
-  <h1 class="title">Happy Birthday, Manya 🎀</h1>
+<section class="page active first-page">
+  <div class="content">
 
-  <img src="https://media.tenor.com/2roX3uxz_68AAAAC/hello-kitty.gif" class="kitty">
+    <img src="https://media.tenor.com/x8v1oNUOmg4AAAAC/cute-cat.gif" class="kitty">
 
-  <p class="message">
-  Happy Birthday, Manya! I was going to make a joke about how old you’re getting, but I’m afraid I’d get hit with your walking cane.
-  Thanks for being the only person who understands my weirdness. Let’s eat way too much cake and regret it together tomorrow!
-  </p>
+    <h1 class="main-title">
+      HAPPY BIRTHDAY MANYA 💕
+    </h1>
 
-  <button onclick="playMusic()" class="music-btn">Click Me to Hear Me 💕</button>
-  <button onclick="nextPage()" class="next-btn">➜</button>
+    <p class="intro-text">
+      Happy Birthday, Manya! I was going to make a joke about how old you’re getting, 
+      but I’m afraid I’d get hit with your walking cane.  
+      Thanks for being the only person who understands my weirdness.  
+      Let’s eat way too much cake and regret it together tomorrow!
+    </p>
+
+    <button onclick="playMusic()" class="music-btn">PLAY MUSIC</button>
+    <button onclick="nextPage()" class="next-btn">NEXT →</button>
+
+  </div>
 </section>
 
-<!-- PHOTO PAGE 1 -->
+<!-- PHOTO PAGES -->
+
 <section class="page">
-  <img src="photo1.jpg.jpeg" class="photo">
-  <button onclick="nextPage()" class="next-btn">➜</button>
+  <div class="photo-frame">
+    <img src="photo1.jpg.jpeg">
+  </div>
+  <p class="thought">You + Me = My Favorite Memory 💗</p>
+  <button onclick="nextPage()" class="next-btn">NEXT →</button>
 </section>
 
-<!-- PHOTO PAGE 2 -->
 <section class="page">
-  <img src="photo2.jpg.jpeg" class="photo">
-  <button onclick="nextPage()" class="next-btn">➜</button>
+  <div class="photo-frame">
+    <img src="photo2.jpg.jpeg">
+  </div>
+  <p class="thought">Every Moment With You Feels Magical ✨</p>
+  <button onclick="nextPage()" class="next-btn">NEXT →</button>
 </section>
 
-<!-- PHOTO PAGE 3 -->
 <section class="page">
-  <img src="photo3.jpg.jpeg" class="photo">
-  <button onclick="nextPage()" class="next-btn">➜</button>
+  <div class="photo-frame">
+    <img src="photo3.jpg.jpeg">
+  </div>
+  <p class="thought">You Make Everything Brighter 🌸</p>
+  <button onclick="nextPage()" class="next-btn">NEXT →</button>
 </section>
 
-<!-- PHOTO PAGE 4 -->
 <section class="page">
-  <img src="photo4.jpg.jpeg" class="photo">
-  <button onclick="nextPage()" class="next-btn">➜</button>
+  <div class="photo-frame">
+    <img src="photo4.jpg.jpeg">
+  </div>
+  <p class="thought">Forever Grateful For You 💞</p>
+  <button onclick="nextPage()" class="next-btn">NEXT →</button>
 </section>
 
-<!-- PHOTO PAGE 5 -->
 <section class="page">
-  <img src="photo5.jpg.jpeg" class="photo">
-  <button onclick="nextPage()" class="next-btn">➜</button>
+  <div class="photo-frame">
+    <img src="photo5.jpg.jpeg">
+  </div>
+  <p class="thought">My Favorite Person. Always. 💖</p>
+  <button onclick="nextPage()" class="next-btn">NEXT →</button>
 </section>
 
-<!-- FINAL CANDLE PAGE -->
+<!-- FINAL PAGE -->
+
 <section class="page">
   <div class="candle-container">
     <div class="flame" id="flame"></div>
@@ -68,11 +91,10 @@
   </div>
 
   <div id="finalMessage" class="final-message">
-  Happy Birthday to the girl who knows every hidden chapter of my life and still chooses to stand by me through it all. 🥺💖  
-  Manya, you aren't just my best friend; you’re my soul sister and my absolute person. 👯‍♀️✨  
-  I feel so incredibly lucky to have your heart in my life, guiding me through every high and holding me through every low. 🌊🌈  
-  Here’s to another year of endless memories, those deep late-night talks that save me, and growing beautifully together.  
-  I love you more than words could ever say, always and forever. ♾️💌🫂
+    Happy Birthday to the girl who knows every hidden chapter of my life 
+    and still chooses to stand by me through it all.  
+    You are my soul sister and my forever person.  
+    I love you endlessly. ♾️💌
   </div>
 </section>
 
