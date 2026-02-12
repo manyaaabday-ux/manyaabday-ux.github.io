@@ -15,71 +15,62 @@
   <source src="blue.mp3.mp3.mp3" type="audio/mpeg">
 </audio>
 
-<div class="floating-hearts"></div>
+<div class="hearts-container"></div>
 
-<!-- FIRST PAGE -->
 <section class="page active">
+
   <img src="https://media.tenor.com/x8v1oNUOmg4AAAAC/cute-cat.gif" class="kitty">
 
-  <h1 class="main-title">HAPPY BIRTHDAY MANYA 💕</h1>
+  <h1 class="title">HAPPY BIRTHDAY MANYA 💕</h1>
 
-  <p class="intro-text">
+  <p class="message">
     Happy Birthday, Manya! I was going to make a joke about how old you’re getting,
     but I’m afraid I’d get hit with your walking cane.
     Thanks for being the only person who understands my weirdness.
     Let’s eat way too much cake and regret it together tomorrow!
   </p>
 
-  <button onclick="playMusic()" class="music-btn">PLAY MUSIC</button>
-  <button onclick="nextPage()" class="next-btn">NEXT →</button>
+  <button class="btn" onclick="playMusic()">PLAY MUSIC</button>
+  <button class="btn" onclick="nextPage()">NEXT →</button>
+
 </section>
 
 <!-- PHOTO PAGES -->
 
 <section class="page">
-  <div class="photo-frame">
-    <img src="photo1.jpg.jpeg">
-  </div>
+  <div class="frame"><img src="photo1.jpg.jpeg"></div>
   <p class="thought">You + Me = My Favorite Memory 💗</p>
-  <button onclick="nextPage()" class="next-btn">NEXT →</button>
+  <button class="btn" onclick="nextPage()">NEXT →</button>
 </section>
 
 <section class="page">
-  <div class="photo-frame">
-    <img src="photo2.jpg.jpeg">
-  </div>
+  <div class="frame"><img src="photo2.jpg.jpeg"></div>
   <p class="thought">Every Moment With You Feels Magical ✨</p>
-  <button onclick="nextPage()" class="next-btn">NEXT →</button>
+  <button class="btn" onclick="nextPage()">NEXT →</button>
 </section>
 
 <section class="page">
-  <div class="photo-frame">
-    <img src="photo3.jpg.jpeg">
-  </div>
+  <div class="frame"><img src="photo3.jpg.jpeg"></div>
   <p class="thought">You Make Everything Brighter 🌸</p>
-  <button onclick="nextPage()" class="next-btn">NEXT →</button>
+  <button class="btn" onclick="nextPage()">NEXT →</button>
 </section>
 
 <section class="page">
-  <div class="photo-frame">
-    <img src="photo4.jpg.jpeg">
-  </div>
+  <div class="frame"><img src="photo4.jpg.jpeg"></div>
   <p class="thought">Forever Grateful For You 💞</p>
-  <button onclick="nextPage()" class="next-btn">NEXT →</button>
+  <button class="btn" onclick="nextPage()">NEXT →</button>
 </section>
 
 <section class="page">
-  <div class="photo-frame">
-    <img src="photo5.jpg.jpeg">
-  </div>
+  <div class="frame"><img src="photo5.jpg.jpeg"></div>
   <p class="thought">My Favorite Person. Always. 💖</p>
-  <button onclick="nextPage()" class="next-btn">NEXT →</button>
+  <button class="btn" onclick="nextPage()">NEXT →</button>
 </section>
 
 <!-- FINAL PAGE -->
 
 <section class="page">
-  <div class="candle-container">
+  <div class="candle-area">
     <div class="flame" id="flame"></div>
     <div class="candle" onclick="blowCandle()"></div>
   </div>
