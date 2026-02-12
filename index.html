@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Birthday Manya 💗</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Cormorant+Garamond:ital,wght@1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,64 +15,77 @@
   <source src="blue.mp3.mp3.mp3" type="audio/mpeg">
 </audio>
 
-<div class="hearts-container"></div>
+<div class="hearts"></div>
 
+<!-- FIRST PAGE -->
 <section class="page active">
+  <div class="card">
 
-  <img src="https://media.tenor.com/x8v1oNUOmg4AAAAC/cute-cat.gif" class="kitty">
+    <h1 class="title">HAPPY BIRTHDAY MANYA 💕</h1>
 
-  <h1 class="title">HAPPY BIRTHDAY MANYA 💕</h1>
+    <p class="message">
+      Happy Birthday, Manya! I was going to make a joke about how old you’re getting,
+      but I’m afraid I’d get hit with your walking cane.
+      Thanks for being the only person who understands my weirdness.
+      Let’s eat way too much cake and regret it together tomorrow!
+    </p>
 
-  <p class="message">
-    Happy Birthday, Manya! I was going to make a joke about how old you’re getting,
-    but I’m afraid I’d get hit with your walking cane.
-    Thanks for being the only person who understands my weirdness.
-    Let’s eat way too much cake and regret it together tomorrow!
-  </p>
+    <button class="btn" onclick="playMusic()">PLAY MUSIC</button>
+    <button class="btn" onclick="nextPage()">NEXT →</button>
 
-  <button class="btn" onclick="playMusic()">PLAY MUSIC</button>
-  <button class="btn" onclick="nextPage()">NEXT →</button>
-
+  </div>
 </section>
 
 <!-- PHOTO PAGES -->
 
 <section class="page">
-  <div class="frame"><img src="photo1.jpg.jpeg"></div>
+  <div class="scrap-frame">
+    <img src="photo1.jpg.jpeg">
+  </div>
   <p class="thought">You + Me = My Favorite Memory 💗</p>
   <button class="btn" onclick="nextPage()">NEXT →</button>
 </section>
 
 <section class="page">
-  <div class="frame"><img src="photo2.jpg.jpeg"></div>
+  <div class="scrap-frame">
+    <img src="photo2.jpg.jpeg">
+  </div>
   <p class="thought">Every Moment With You Feels Magical ✨</p>
   <button class="btn" onclick="nextPage()">NEXT →</button>
 </section>
 
 <section class="page">
-  <div class="frame"><img src="photo3.jpg.jpeg"></div>
+  <div class="scrap-frame">
+    <img src="photo3.jpg.jpeg">
+  </div>
   <p class="thought">You Make Everything Brighter 🌸</p>
   <button class="btn" onclick="nextPage()">NEXT →</button>
 </section>
 
 <section class="page">
-  <div class="frame"><img src="photo4.jpg.jpeg"></div>
+  <div class="scrap-frame">
+    <img src="photo4.jpg.jpeg">
+  </div>
   <p class="thought">Forever Grateful For You 💞</p>
   <button class="btn" onclick="nextPage()">NEXT →</button>
 </section>
 
 <section class="page">
-  <div class="frame"><img src="photo5.jpg.jpeg"></div>
+  <div class="scrap-frame">
+    <img src="photo5.jpg.jpeg">
+  </div>
   <p class="thought">My Favorite Person. Always. 💖</p>
   <button class="btn" onclick="nextPage()">NEXT →</button>
 </section>
 
-<!-- FINAL PAGE -->
+<!-- CAKE PAGE -->
 
 <section class="page">
-  <div class="candle-area">
+  <div class="cake-container" onclick="blowCandle()">
     <div class="flame" id="flame"></div>
-    <div class="candle" onclick="blowCandle()"></div>
+    <div class="cake-top"></div>
+    <div class="cake-middle"></div>
+    <div class="cake-bottom"></div>
   </div>
 
   <div id="finalMessage" class="final-message">
