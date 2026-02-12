@@ -7,50 +7,12 @@ body {
   overflow: hidden;
 }
 
-/* Floating Hearts */
-.hearts {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.heart {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background: rgba(255, 182, 193, 0.4);
-  transform: rotate(45deg);
-  animation: float 12s linear infinite;
-}
-
-.heart::before,
-.heart::after {
-  content: "";
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background: rgba(255, 182, 193, 0.4);
-  border-radius: 50%;
-}
-
-.heart::before { top: -6px; left: 0; }
-.heart::after { left: -6px; top: 0; }
-
-@keyframes float {
-  from { transform: translateY(100vh) rotate(45deg); opacity: 0; }
-  30% { opacity: 1; }
-  to { transform: translateY(-100px) rotate(45deg); opacity: 0; }
-}
-
 .page {
   display: none;
   height: 100vh;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 30px;
 }
 
 .page.active { display: flex; }
@@ -60,7 +22,7 @@ body {
   padding: 40px;
   border-radius: 25px;
   box-shadow: 0 15px 40px rgba(255,182,193,0.4);
-  max-width: 650px;
+  max-width: 600px;
 }
 
 .title {
@@ -68,13 +30,8 @@ body {
   font-weight: 900;
 }
 
-.message {
-  margin: 20px 0;
-  line-height: 1.6;
-}
-
 .btn {
-  background: linear-gradient(135deg, #ff9ccf, #ffcce6);
+  background: linear-gradient(135deg, #ff4d6d, #ff99ac);
   border: none;
   padding: 12px 30px;
   margin: 10px;
@@ -83,85 +40,54 @@ body {
   cursor: pointer;
 }
 
-.scrap-frame {
-  background: white;
-  padding: 20px;
-  border-radius: 25px;
-  box-shadow: 0 15px 40px rgba(255,182,193,0.5);
-}
+/* RED VELVET CAKE */
 
-.scrap-frame img {
-  max-width: 250px;
-  border-radius: 15px;
-}
-
-.thought {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 1.2rem;
-  margin-top: 15px;
-}
-
-/* Floral Cake */
 .cake-container {
   position: relative;
-  margin-top: 120px;
   cursor: pointer;
 }
 
 .cake-bottom {
-  width: 220px;
+  width: 240px;
   height: 70px;
-  background: linear-gradient(to bottom, #ffffff, #ffeef5);
+  background: #8b0000;
   border-radius: 20px;
   margin: auto;
-  box-shadow: 0 15px 40px rgba(255,182,193,0.5);
+  box-shadow: 0 15px 30px rgba(139,0,0,0.5);
 }
 
 .cake-middle {
-  width: 180px;
+  width: 200px;
   height: 60px;
-  background: linear-gradient(to bottom, #fff, #ffe6f2);
+  background: #a30000;
   border-radius: 20px;
   margin: auto;
-  margin-top: -15px;
+  margin-top: -20px;
 }
 
 .cake-top {
-  width: 140px;
+  width: 160px;
   height: 50px;
-  background: linear-gradient(to bottom, #fff, #fff5fa);
+  background: #b30000;
   border-radius: 20px;
   margin: auto;
-  margin-top: -15px;
+  margin-top: -20px;
 }
 
-.flower {
-  width: 18px;
-  height: 18px;
-  background: #ffb6c1;
-  border-radius: 50%;
+.cream-top,
+.cream-middle {
+  background: white;
+  height: 15px;
+  width: 100%;
+  border-radius: 20px;
   position: absolute;
-  top: -10px;
+  left: 0;
 }
 
-.flower::before,
-.flower::after {
-  content: "";
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  background: #ffc0cb;
-  border-radius: 50%;
-}
+.cream-top { top: 30px; }
+.cream-middle { top: 85px; }
 
-.flower::before { left: -9px; }
-.flower::after { left: 9px; }
-
-.f1 { left: 40%; }
-.f2 { left: 55%; }
-.f3 { left: 48%; top: -20px; }
-.f4 { left: 60%; top: -15px; }
+/* Candle */
 
 .flame {
   width: 18px;
@@ -173,7 +99,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   animation: flicker 0.4s infinite;
-  box-shadow: 0 0 15px gold;
+  box-shadow: 0 0 20px gold;
 }
 
 @keyframes flicker {
@@ -182,8 +108,28 @@ body {
   100% { opacity: 1; }
 }
 
-.final-message {
+/* Party Overlay */
+
+.party-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,0,100,0.8);
   display: none;
-  margin-top: 30px;
-  max-width: 600px;
+  justify-content: center;
+  align-items: center;
+}
+
+.party-text {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 900;
+  animation: pop 1s ease infinite alternate;
+}
+
+@keyframes pop {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
 }
