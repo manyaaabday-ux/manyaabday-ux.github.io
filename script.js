@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let currentPage = 0;
   const pages = document.querySelectorAll(".page");
-  const heartsContainer = document.querySelector(".hearts-container");
+  const heartsContainer = document.querySelector(".hearts");
 
   function showPage(index) {
     pages.forEach(page => page.classList.remove("active"));
@@ -17,8 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   window.playMusic = function () {
-    const music = document.getElementById("bgMusic");
-    music.play();
+    document.getElementById("bgMusic").play();
   };
 
   window.blowCandle = function () {
@@ -26,17 +25,15 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("finalMessage").style.display = "block";
   };
 
-  /* Generate Floating Hearts */
+  /* Generate soft hearts */
   setInterval(() => {
     const heart = document.createElement("div");
     heart.classList.add("heart");
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = (Math.random() * 3 + 5) + "s";
+    heart.style.animationDuration = (Math.random() * 5 + 5) + "s";
     heartsContainer.appendChild(heart);
 
-    setTimeout(() => {
-      heart.remove();
-    }, 8000);
-  }, 500);
+    setTimeout(() => heart.remove(), 10000);
+  }, 800);
 
 });
