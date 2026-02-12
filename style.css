@@ -1,27 +1,27 @@
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #FFB7C5, #FF69B4);
+  background: radial-gradient(circle at top, #3b0a1a, #120005);
+  font-family: 'Playfair Display', serif;
+  color: white;
   overflow: hidden;
   text-align: center;
-  color: white;
-  position: relative;
 }
 
-/* Floating hearts */
-body::before {
-  content: "💗 💕 💖 💞 💓 💘";
-  position: absolute;
+/* Floating Hearts */
+.floating-hearts {
+  position: fixed;
   width: 100%;
   height: 100%;
-  font-size: 40px;
-  animation: floatHearts 15s linear infinite;
-  opacity: 0.2;
+  pointer-events: none;
+  background-image: url("https://i.ibb.co/7G5Y7Gg/pink-heart.png");
+  background-size: 40px;
+  animation: floatBg 20s linear infinite;
+  opacity: 0.15;
 }
 
-@keyframes floatHearts {
-  0% { transform: translateY(100%); }
-  100% { transform: translateY(-100%); }
+@keyframes floatBg {
+  from { background-position: 0 1000px; }
+  to { background-position: 0 -1000px; }
 }
 
 .page {
@@ -30,40 +30,43 @@ body::before {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 20px;
+  padding: 30px;
 }
 
 .page.active {
   display: flex;
 }
 
-.title {
-  font-family: 'Pacifico', cursive;
-  font-size: 2.5rem;
-  text-shadow: 0 0 15px white;
+.main-title {
+  font-size: 2.8rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin: 20px 0;
+}
+
+.intro-text {
+  max-width: 600px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
 }
 
 .kitty {
-  width: 150px;
-  margin: 10px 0;
-}
-
-.message {
-  max-width: 600px;
-  margin: 20px;
-  font-weight: 300;
+  width: 160px;
+  margin-bottom: 20px;
 }
 
 .music-btn, .next-btn {
-  background: white;
-  color: #FF1493;
+  background: linear-gradient(135deg, #ff4da6, #ff99cc);
   border: none;
-  padding: 12px 25px;
+  padding: 12px 30px;
   margin: 10px;
   border-radius: 30px;
   font-size: 1rem;
+  font-weight: bold;
+  color: white;
   cursor: pointer;
-  box-shadow: 0 0 15px pink;
+  box-shadow: 0 0 20px rgba(255, 0, 128, 0.6);
   transition: 0.3s;
 }
 
@@ -71,11 +74,22 @@ body::before {
   transform: scale(1.1);
 }
 
-.photo {
-  max-width: 80%;
-  border: 8px solid white;
+.photo-frame {
+  padding: 15px;
+  background: #f8d7e4;
   border-radius: 25px;
-  box-shadow: 0 0 30px #ff69b4;
+  box-shadow: 0 10px 40px rgba(255, 105, 180, 0.6);
+}
+
+.photo-frame img {
+  max-width: 250px;
+  border-radius: 15px;
+}
+
+.thought {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  font-style: italic;
 }
 
 .candle-container {
@@ -84,9 +98,9 @@ body::before {
 }
 
 .candle {
-  width: 40px;
-  height: 150px;
-  background: #ff69b4;
+  width: 50px;
+  height: 170px;
+  background: pink;
   margin: auto;
   border-radius: 10px;
   cursor: pointer;
@@ -94,12 +108,12 @@ body::before {
 
 .flame {
   width: 20px;
-  height: 30px;
+  height: 35px;
   background: orange;
   border-radius: 50%;
   position: absolute;
-  top: -30px;
-  left: 10px;
+  top: -35px;
+  left: 15px;
   animation: flicker 0.3s infinite;
 }
 
@@ -112,6 +126,6 @@ body::before {
 .final-message {
   display: none;
   max-width: 600px;
-  margin-top: 20px;
-  font-weight: 300;
+  margin-top: 30px;
+  font-size: 1.1rem;
 }
