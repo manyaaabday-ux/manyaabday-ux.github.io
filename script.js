@@ -23,17 +23,31 @@ document.addEventListener("DOMContentLoaded", function () {
   window.blowCandle = function () {
     document.getElementById("flame").style.display = "none";
     document.getElementById("finalWish").style.display = "block";
-    document.getElementById("partyOverlay").style.display = "flex";
+    launchConfetti();
   };
 
-  /* Floating hearts continuously */
+  /* CONTINUOUS HEARTS */
   setInterval(() => {
     const heart = document.createElement("div");
     heart.classList.add("heart");
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = (Math.random() * 6 + 6) + "s";
+    heart.style.animationDuration = (Math.random() * 5 + 6) + "s";
     heartsContainer.appendChild(heart);
-    setTimeout(() => heart.remove(), 12000);
-  }, 900);
+    setTimeout(() => heart.remove(), 11000);
+  }, 700);
+
+  /* CONFETTI EXPLOSION */
+  function launchConfetti() {
+    for (let i = 0; i < 60; i++) {
+      const confetti = document.createElement("div");
+      confetti.classList.add("confetti");
+      confetti.style.background = ["#ff4d6d","#ff99ac","#ffffff","#ffd6e8"][Math.floor(Math.random()*4)];
+      confetti.style.left = Math.random() * 100 + "vw";
+      confetti.style.top = "-10px";
+      confetti.style.animationDuration = (Math.random() * 2 + 2) + "s";
+      document.body.appendChild(confetti);
+      setTimeout(() => confetti.remove(), 3000);
+    }
+  }
 
 });
