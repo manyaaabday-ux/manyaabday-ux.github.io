@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background: radial-gradient(circle at top, #3b0a1a, #120005);
+  background: radial-gradient(circle at top, #4b001f, #120005);
   font-family: 'Playfair Display', serif;
   color: white;
   overflow: hidden;
@@ -8,91 +8,109 @@ body {
 }
 
 /* Floating Hearts */
-.floating-hearts {
+.hearts-container {
   position: fixed;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  background-image: url("https://i.ibb.co/7G5Y7Gg/pink-heart.png");
-  background-size: 40px;
-  animation: floatBg 20s linear infinite;
-  opacity: 0.15;
+  overflow: hidden;
 }
 
-@keyframes floatBg {
-  from { background-position: 0 1000px; }
-  to { background-position: 0 -1000px; }
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: pink;
+  transform: rotate(45deg);
+  animation: float 8s linear infinite;
+  opacity: 0.7;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: pink;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+@keyframes float {
+  0% { transform: translateY(100vh) rotate(45deg); opacity: 0; }
+  30% { opacity: 1; }
+  100% { transform: translateY(-100px) rotate(45deg); opacity: 0; }
 }
 
 .page {
   display: none;
   height: 100vh;
+  padding: 40px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 30px;
 }
 
 .page.active {
   display: flex;
 }
 
-.main-title {
-  font-size: 2.8rem;
+.title {
+  font-size: 3rem;
   font-weight: 900;
-  letter-spacing: 2px;
-  margin: 20px 0;
 }
 
-.intro-text {
+.message {
   max-width: 600px;
-  font-size: 1.1rem;
   line-height: 1.6;
-  margin-bottom: 25px;
+  margin: 20px 0;
 }
 
 .kitty {
   width: 160px;
-  margin-bottom: 20px;
 }
 
-.music-btn, .next-btn {
+.btn {
   background: linear-gradient(135deg, #ff4da6, #ff99cc);
   border: none;
   padding: 12px 30px;
   margin: 10px;
   border-radius: 30px;
-  font-size: 1rem;
   font-weight: bold;
   color: white;
   cursor: pointer;
-  box-shadow: 0 0 20px rgba(255, 0, 128, 0.6);
-  transition: 0.3s;
+  box-shadow: 0 0 20px rgba(255,0,128,0.6);
 }
 
-.music-btn:hover, .next-btn:hover {
-  transform: scale(1.1);
-}
-
-.photo-frame {
-  padding: 15px;
-  background: #f8d7e4;
+.frame {
+  background: #ffe6f2;
+  padding: 20px;
   border-radius: 25px;
-  box-shadow: 0 10px 40px rgba(255, 105, 180, 0.6);
+  box-shadow: 0 15px 40px rgba(255,105,180,0.6);
 }
 
-.photo-frame img {
+.frame img {
   max-width: 250px;
   border-radius: 15px;
 }
 
 .thought {
   margin-top: 15px;
-  font-size: 1.2rem;
   font-style: italic;
+  font-size: 1.2rem;
 }
 
-.candle-container {
+.candle-area {
   position: relative;
   margin-top: 100px;
 }
@@ -127,5 +145,4 @@ body {
   display: none;
   max-width: 600px;
   margin-top: 30px;
-  font-size: 1.1rem;
 }
