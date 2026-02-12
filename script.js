@@ -1,27 +1,42 @@
-let currentPage = 0;
-const pages = document.querySelectorAll(".page");
+document.addEventListener("DOMContentLoaded", function () {
 
-function showPage(index) {
-  pages.forEach(page => page.classList.remove("active"));
-  pages[index].classList.add("active");
-}
+  let currentPage = 0;
+  const pages = document.querySelectorAll(".page");
+  const heartsContainer = document.querySelector(".hearts-container");
 
-function nextPage() {
-  if (currentPage < pages.length - 1) {
-    currentPage++;
-    showPage(currentPage);
+  function showPage(index) {
+    pages.forEach(page => page.classList.remove("active"));
+    pages[index].classList.add("active");
   }
-}
 
-function playMusic() {
-  const music = document.getElementById("bgMusic");
-  music.play();
-}
+  window.nextPage = function () {
+    if (currentPage < pages.length - 1) {
+      currentPage++;
+      showPage(currentPage);
+    }
+  };
 
-function blowCandle() {
-  const flame = document.getElementById("flame");
-  const message = document.getElementById("finalMessage");
+  window.playMusic = function () {
+    const music = document.getElementById("bgMusic");
+    music.play();
+  };
 
-  flame.style.display = "none";
-  message.style.display = "block";
-}
+  window.blowCandle = function () {
+    document.getElementById("flame").style.display = "none";
+    document.getElementById("finalMessage").style.display = "block";
+  };
+
+  /* Generate Floating Hearts */
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 5) + "s";
+    heartsContainer.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 8000);
+  }, 500);
+
+});
