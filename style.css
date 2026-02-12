@@ -4,10 +4,49 @@ body {
   font-family: 'Playfair Display', serif;
   text-align: center;
   color: #6b2d45;
-  overflow: hidden;
+  overflow-x: hidden;
+}
+
+/* Floating hearts behind content */
+.hearts {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: rgba(255,182,193,0.4);
+  transform: rotate(45deg);
+  animation: float 10s linear infinite;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: rgba(255,182,193,0.4);
+  border-radius: 50%;
+}
+
+.heart::before { top: -7px; left: 0; }
+.heart::after { left: -7px; top: 0; }
+
+@keyframes float {
+  from { transform: translateY(100vh) rotate(45deg); opacity: 0; }
+  30% { opacity: 1; }
+  to { transform: translateY(-100px) rotate(45deg); opacity: 0; }
 }
 
 .page {
+  position: relative;
+  z-index: 2;
   display: none;
   height: 100vh;
   justify-content: center;
@@ -19,26 +58,11 @@ body {
 .page.active { display: flex; }
 
 .card {
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.9);
   padding: 40px;
   border-radius: 25px;
   box-shadow: 0 15px 40px rgba(255,182,193,0.4);
   max-width: 600px;
-}
-
-.title {
-  font-size: 2.5rem;
-  font-weight: 900;
-}
-
-.btn {
-  background: linear-gradient(135deg, #ff4d6d, #ff99ac);
-  border: none;
-  padding: 12px 30px;
-  margin: 10px;
-  border-radius: 30px;
-  font-weight: bold;
-  cursor: pointer;
 }
 
 .photo-frame {
@@ -49,23 +73,14 @@ body {
 }
 
 .photo-frame img {
-  max-width: 250px;
+  max-width: 260px;
   border-radius: 15px;
-}
-
-.thought {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 1.2rem;
-  margin-top: 15px;
-}
-
-/* RED VELVET CAKE */
-
-.cake-container {
   position: relative;
-  cursor: pointer;
+  z-index: 3;
 }
+
+/* Red velvet cake */
+.cake-container { position: relative; cursor: pointer; }
 
 .cake-bottom {
   width: 240px;
@@ -125,8 +140,14 @@ body {
   100% { opacity: 1; }
 }
 
-/* PARTY OVERLAY */
+.final-wish {
+  display: none;
+  margin-top: 30px;
+  max-width: 600px;
+  font-size: 1.2rem;
+}
 
+/* Party Overlay */
 .party-overlay {
   position: fixed;
   top: 0;
@@ -137,6 +158,7 @@ body {
   display: none;
   justify-content: center;
   align-items: center;
+  z-index: 5;
 }
 
 .party-text {
