@@ -1,13 +1,13 @@
 body {
   margin: 0;
-  background: linear-gradient(135deg, #ffe6f2, #ffd6e8);
+  background: linear-gradient(135deg, #ffeef5, #ffd6e8);
   font-family: 'Playfair Display', serif;
   text-align: center;
   color: #6b2d45;
   overflow: hidden;
 }
 
-/* Soft Floating Hearts */
+/* Floating Hearts */
 .hearts {
   position: fixed;
   width: 100%;
@@ -18,25 +18,25 @@ body {
 
 .heart {
   position: absolute;
-  width: 15px;
-  height: 15px;
+  width: 12px;
+  height: 12px;
   background: rgba(255, 182, 193, 0.4);
   transform: rotate(45deg);
-  animation: float 10s linear infinite;
+  animation: float 12s linear infinite;
 }
 
 .heart::before,
 .heart::after {
   content: "";
   position: absolute;
-  width: 15px;
-  height: 15px;
+  width: 12px;
+  height: 12px;
   background: rgba(255, 182, 193, 0.4);
   border-radius: 50%;
 }
 
-.heart::before { top: -7px; left: 0; }
-.heart::after { left: -7px; top: 0; }
+.heart::before { top: -6px; left: 0; }
+.heart::after { left: -6px; top: 0; }
 
 @keyframes float {
   from { transform: translateY(100vh) rotate(45deg); opacity: 0; }
@@ -56,10 +56,11 @@ body {
 .page.active { display: flex; }
 
 .card {
-  background: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.8);
   padding: 40px;
   border-radius: 25px;
-  box-shadow: 0 15px 40px rgba(255,182,193,0.6);
+  box-shadow: 0 15px 40px rgba(255,182,193,0.4);
+  max-width: 650px;
 }
 
 .title {
@@ -68,8 +69,8 @@ body {
 }
 
 .message {
-  max-width: 600px;
   margin: 20px 0;
+  line-height: 1.6;
 }
 
 .btn {
@@ -83,10 +84,10 @@ body {
 }
 
 .scrap-frame {
-  background: #fff;
+  background: white;
   padding: 20px;
   border-radius: 25px;
-  box-shadow: 0 15px 40px rgba(255,182,193,0.6);
+  box-shadow: 0 15px 40px rgba(255,182,193,0.5);
 }
 
 .scrap-frame img {
@@ -101,48 +102,78 @@ body {
   margin-top: 15px;
 }
 
-/* Elegant Cake */
+/* Floral Cake */
 .cake-container {
   position: relative;
+  margin-top: 120px;
   cursor: pointer;
 }
 
 .cake-bottom {
-  width: 200px;
-  height: 60px;
-  background: white;
-  border-radius: 15px;
+  width: 220px;
+  height: 70px;
+  background: linear-gradient(to bottom, #ffffff, #ffeef5);
+  border-radius: 20px;
   margin: auto;
+  box-shadow: 0 15px 40px rgba(255,182,193,0.5);
 }
 
 .cake-middle {
-  width: 160px;
-  height: 50px;
-  background: #ffe6f2;
-  border-radius: 15px;
+  width: 180px;
+  height: 60px;
+  background: linear-gradient(to bottom, #fff, #ffe6f2);
+  border-radius: 20px;
   margin: auto;
-  margin-top: -10px;
+  margin-top: -15px;
 }
 
 .cake-top {
-  width: 120px;
-  height: 40px;
-  background: white;
-  border-radius: 15px;
+  width: 140px;
+  height: 50px;
+  background: linear-gradient(to bottom, #fff, #fff5fa);
+  border-radius: 20px;
   margin: auto;
-  margin-top: -10px;
+  margin-top: -15px;
 }
 
-.flame {
-  width: 15px;
-  height: 25px;
-  background: gold;
+.flower {
+  width: 18px;
+  height: 18px;
+  background: #ffb6c1;
   border-radius: 50%;
   position: absolute;
-  top: -25px;
+  top: -10px;
+}
+
+.flower::before,
+.flower::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: #ffc0cb;
+  border-radius: 50%;
+}
+
+.flower::before { left: -9px; }
+.flower::after { left: 9px; }
+
+.f1 { left: 40%; }
+.f2 { left: 55%; }
+.f3 { left: 48%; top: -20px; }
+.f4 { left: 60%; top: -15px; }
+
+.flame {
+  width: 18px;
+  height: 30px;
+  background: radial-gradient(circle, gold, orange);
+  border-radius: 50%;
+  position: absolute;
+  top: -45px;
   left: 50%;
   transform: translateX(-50%);
-  animation: flicker 0.3s infinite;
+  animation: flicker 0.4s infinite;
+  box-shadow: 0 0 15px gold;
 }
 
 @keyframes flicker {
