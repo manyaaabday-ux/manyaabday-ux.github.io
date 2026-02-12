@@ -1,1 +1,85 @@
-1
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive;
+  background: linear-gradient(135deg, #FFB7C5, #FF1493);
+  overflow: hidden;
+  text-align: center;
+  color: white;
+}
+
+.page {
+  display: none;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.page.active {
+  display: flex;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.message {
+  max-width: 600px;
+  margin: 20px;
+}
+
+.music-btn, .next-btn {
+  background: white;
+  color: #FF1493;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.photo {
+  max-width: 80%;
+  border: 8px solid white;
+  border-radius: 25px;
+  box-shadow: 0 0 25px pink;
+}
+
+.candle-container {
+  position: relative;
+  margin-top: 100px;
+}
+
+.candle {
+  width: 40px;
+  height: 150px;
+  background: pink;
+  margin: auto;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.flame {
+  width: 20px;
+  height: 30px;
+  background: orange;
+  border-radius: 50%;
+  position: absolute;
+  top: -30px;
+  left: 10px;
+  animation: flicker 0.3s infinite;
+}
+
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+.final-message {
+  display: none;
+  max-width: 600px;
+  margin-top: 20px;
+}
