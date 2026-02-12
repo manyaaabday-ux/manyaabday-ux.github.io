@@ -25,15 +25,15 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("finalMessage").style.display = "block";
   };
 
-  /* Generate soft hearts */
+  /* Generate subtle floating hearts */
   setInterval(() => {
     const heart = document.createElement("div");
     heart.classList.add("heart");
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = (Math.random() * 5 + 5) + "s";
+    heart.style.animationDuration = (Math.random() * 6 + 6) + "s";
     heartsContainer.appendChild(heart);
 
-    setTimeout(() => heart.remove(), 10000);
-  }, 800);
+    setTimeout(() => heart.remove(), 12000);
+  }, 900);
 
 });
