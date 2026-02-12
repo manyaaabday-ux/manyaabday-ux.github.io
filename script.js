@@ -1,19 +1,27 @@
 let currentPage = 0;
 const pages = document.querySelectorAll(".page");
 
+function showPage(index) {
+    pages.forEach(page => page.classList.remove("active"));
+    pages[index].classList.add("active");
+}
+
 function nextPage() {
-  pages[currentPage].classList.remove("active");
-  currentPage++;
-  if (currentPage < pages.length) {
-    pages[currentPage].classList.add("active");
-  }
+    if (currentPage < pages.length - 1) {
+        currentPage++;
+        showPage(currentPage);
+    }
 }
 
 function playMusic() {
-  document.getElementById("bgMusic").play();
+    const music = document.getElementById("bgMusic");
+    music.play();
 }
 
 function blowCandle() {
-  document.getElementById("flame").style.display = "none";
-  document.getElementById("finalMessage").style.display = "block";
+    const flame = document.getElementById("flame");
+    const message = document.getElementById("finalMessage");
+
+    flame.style.display = "none";
+    message.style.display = "block";
 }
