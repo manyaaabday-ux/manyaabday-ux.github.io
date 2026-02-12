@@ -170,3 +170,14 @@ body {
     opacity: 0;
   }
 }
+/* FORCE RED BUTTON */
+
+.btn {
+  background: #ff1f4b !important;
+  color: white !important;
+  box-shadow: 0 6px 15px rgba(255, 31, 75, 0.4) !important;
+}
+
+.btn:hover {
+  background: #d60036 !important;
+}
