@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Manya 💖</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Background Music -->
+<audio id="bgMusic" loop>
+  <source src="blue.mp3.mp3.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Section 1 -->
+<section class="page active">
+  <h1 class="title">Happy Birthday, Manya 🎀</h1>
+  <p class="message">
+  Happy Birthday, Manya! I was going to make a joke about how old you’re getting, but I’m afraid I’d get hit with your walking cane. 
+  Thanks for being the only person who understands my weirdness. Let’s eat way too much cake and regret it together tomorrow!
+  </p>
+
+  <button onclick="playMusic()" class="music-btn">Click Me to Hear Me 💕</button>
+  <button onclick="nextPage()" class="next-btn">➜</button>
+</section>
+
+<!-- Photo Pages -->
+<section class="page">
+  <img src="photo1.jpg.jpeg" class="photo">
+  <button onclick="nextPage()" class="next-btn">➜</button>
+</section>
+
+<section class="page">
+  <img src="photo2.jpg.jpeg" class="photo">
+  <button onclick="nextPage()" class="next-btn">➜</button>
+</section>
+
+<section class="page">
+  <img src="photo3.jpg.jpeg" class="photo">
+  <button onclick="nextPage()" class="next-btn">➜</button>
+</section>
+
+<section class="page">
+  <img src="photo4.jpg.jpeg" class="photo">
+  <button onclick="nextPage()" class="next-btn">➜</button>
+</section>
+
+<section class="page">
+  <img src="photo5.jpg.jpeg" class="photo">
+  <button onclick="nextPage()" class="next-btn">➜</button>
+</section>
+
+<!-- Final Candle Page -->
+<section class="page">
+  <div class="candle-container">
+    <div class="flame" id="flame"></div>
+    <div class="candle" onclick="blowCandle()"></div>
+  </div>
+
+  <div id="finalMessage" class="final-message">
+  Happy Birthday to the girl who knows every hidden chapter of my life and still chooses to stand by me through it all. 🥺💖  
+  Manya, you aren't just my best friend; you’re my soul sister and my absolute person. 👯‍♀️✨  
+  I feel so incredibly lucky to have your heart in my life, guiding me through every high and holding me through every low. 🌊🌈  
+  Here’s to another year of endless memories, those deep late-night talks that save me, and growing beautifully together.  
+  I love you more than words could ever say, always and forever. ♾️💌🫂
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
